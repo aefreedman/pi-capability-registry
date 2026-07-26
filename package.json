@@ -1,0 +1,47 @@
+{
+  "name": "@aefree/pi-capability-registry",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Runtime-scoped, version-aware registry mechanics for interoperable Pi capability contracts.",
+  "type": "module",
+  "sideEffects": false,
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./conformance": {
+      "types": "./dist/conformance.d.ts",
+      "import": "./dist/conformance.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "test:packed-foundation": "node --test tests/foundation-packed-harness.test.mjs",
+    "pack:check": "npm pack --dry-run"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.8.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/aefreedman/pi-capability-registry.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aefreedman/pi-capability-registry/issues"
+  },
+  "homepage": "https://github.com/aefreedman/pi-capability-registry#readme"
+}
