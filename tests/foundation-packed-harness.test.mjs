@@ -8,7 +8,7 @@ import { fileURLToPath } from "node:url";
 
 const registryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const workspaceRoot = path.resolve(registryRoot, "..");
-const packageNames = ["pi-capability-registry", "pi-repo-search", "pi-project-artifacts", "pi-workflow"];
+const packageNames = ["pi-capability-registry", "pi-package-references", "pi-repo-search", "pi-project-artifacts", "pi-workflow"];
 const npmCli = process.env.npm_execpath ?? path.join(path.dirname(process.execPath), "node_modules", "npm", "bin", "npm-cli.js");
 
 function run(command, args, cwd) {

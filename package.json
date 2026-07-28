@@ -1,7 +1,6 @@
 {
   "name": "@aefree/pi-capability-registry",
   "version": "0.1.0",
-  "private": true,
   "description": "Runtime-scoped, version-aware registry mechanics for interoperable Pi capability contracts.",
   "type": "module",
   "sideEffects": false,
@@ -26,6 +25,7 @@
   ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
+    "prepack": "npm run build",
     "test": "npm run build && node --test tests/*.test.mjs",
     "test:packed-foundation": "node --test tests/foundation-packed-harness.test.mjs",
     "pack:check": "npm pack --dry-run"
@@ -44,5 +44,8 @@
   "bugs": {
     "url": "https://github.com/aefreedman/pi-capability-registry/issues"
   },
-  "homepage": "https://github.com/aefreedman/pi-capability-registry#readme"
+  "homepage": "https://github.com/aefreedman/pi-capability-registry#readme",
+  "publishConfig": {
+    "access": "public"
+  }
 }

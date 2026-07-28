@@ -6,12 +6,13 @@ import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
-test("package remains a code-only ESM library without Pi resources or runtime dependencies", async () => {
+test("package remains a public code-only ESM library without Pi resources or runtime dependencies", async () => {
   const packageJson = JSON.parse(await readFile(path.join(root, "package.json"), "utf8"));
   assert.equal(packageJson.name, "@aefree/pi-capability-registry");
   assert.equal(packageJson.type, "module");
   assert.equal(packageJson.sideEffects, false);
-  assert.equal(packageJson.private, true);
+  assert.equal("private" in packageJson, false);
+  assert.equal(packageJson.publishConfig.access, "public");
   assert.equal(packageJson.version, "0.1.0");
   assert.equal("pi" in packageJson, false);
   assert.equal("dependencies" in packageJson, false);
