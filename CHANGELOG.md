@@ -6,6 +6,7 @@ All notable changes to this package will be documented in this file.
 
 ### Added
 
+- Package documentation covering installation/loading, architecture, lifecycle usage, and conformance testing.
 - Runtime-scoped, version-aware capability registry kernel.
 - Structural base validation and capability-specific validation hooks.
 - Atomic same-owner replacement and cross-owner provider-ID diagnostics.
