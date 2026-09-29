@@ -5,6 +5,7 @@ All notable changes to this package will be documented in this file.
 ## Unreleased
 
 - Pin TypeScript 7.0.2; align direct Node types with the runtime floor.
+- Update the packed-consumer harness to exercise the current Registry, Package References, and Project Artifacts contracts instead of removed Wave 0 packages.
 
 ## 0.1.0 - 2026-07-28
 
