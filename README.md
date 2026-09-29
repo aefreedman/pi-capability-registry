@@ -14,7 +14,7 @@ pi installs a user-facing package
     └── the user-facing extension imports and uses the library
 ```
 
-The package is currently private during incubation. Until it is published or bundled by consumers, external npm or git installs that need it will not resolve from the public npm registry.
+The package is publicly available on npm as a normal runtime dependency.
 
 See [Installation and loading](docs/installation-and-loading.md) for the complete distribution model.
 
@@ -43,7 +43,8 @@ Capability packages define their own record schemas, validation, provider select
 - Node.js 20 or newer
 - No runtime dependencies
 - No Pi manifest or Pi resources
-- Private during Wave 0 incubation
+- Public npm library with prebuilt runtime and declarations
+- Authored TypeScript and relative source/declaration maps included for debugging
 
 ## License
 

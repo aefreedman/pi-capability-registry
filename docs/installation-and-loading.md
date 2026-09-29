@@ -32,7 +32,7 @@ When Pi installs an npm or git package, it runs npm installation for that packag
 
 ```text
 Pi package settings
-└── @aefree/pi-repo-search (example user-facing package)
+└── @aefree/pi-project-artifacts (user-facing package)
     ├── Pi loads its declared extension
     └── npm installs @aefree/pi-capability-registry
         └── extension code imports the registry API
@@ -51,16 +51,13 @@ Users install and configure only the user-facing packages they need. They should
 
 Installing it directly with npm is useful only for authors developing a package that imports its API.
 
-## Current private-package limitation
+## Public distribution and debugging
 
-The package currently has `"private": true`. It cannot be published to npm in that state.
+This package is public on npm. Consumers declare it in `dependencies`; no sibling repository or workspace link is required. Validate packed consumers from a clean directory rather than relying on workspace links.
 
-Local workspace development works because consuming lockfiles can link to the sibling repository. That link is not a public distribution mechanism. Before external users can install a consumer that depends on this package, distribution must use one of these models:
+The tarball includes prebuilt ESM and declarations in `dist/`. Authored TypeScript in `src/` and relative JavaScript/declaration maps are intentionally shipped so Node's `--enable-source-maps` can map runtime errors to source and editors can navigate declarations to their implementation. These source files are debugging material, not additional runtime entry points.
 
-1. **Publish the registry package.** Remove the private flag as part of an authorized release, publish it, and keep it in consumers' `dependencies`.
-2. **Bundle it with each consumer.** Include it in the consumer tarball and configure the consumer's package metadata accordingly.
-
-Publishing it as a normal code library keeps dependency ownership and updates explicit. Whichever model is chosen, validate the packed consumer from a clean directory rather than relying on workspace links.
+The manifest's build/test scripts are repository-maintainer commands. Rebuilding or running the test suite requires a repository checkout with its development dependencies, tests, and `tsconfig.json`; installed consumers use the prebuilt exports.
 
 ## Why separate Pi installs do not provide shared imports
 

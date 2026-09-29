@@ -2,7 +2,7 @@
 
 ## 1. Define a capability contract
 
-A capability package owns the stable key, contract version, record type, and validation.
+A capability package owns the stable key, contract version, record type, and validation. The search capability and provider package names below are hypothetical examples, not installation recommendations.
 
 ```ts
 import {

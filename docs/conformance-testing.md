@@ -2,6 +2,8 @@
 
 The `@aefree/pi-capability-registry/conformance` export provides deterministic shared checks without requiring a particular test framework.
 
+The search contract below is hypothetical, not an installable package.
+
 ```ts
 import { assertRegistryConformance } from "@aefree/pi-capability-registry/conformance";
 
@@ -43,7 +45,9 @@ A passing report proves only the generic lifecycle contract. Capability packages
 
 Workspace links can hide distribution defects. Before release, pack the registry and its consumers, install the tarballs in a neutral temporary project, and verify imports and composition there.
 
-The package's `tests/foundation-packed-harness.test.mjs` demonstrates this for the Wave 0 foundation packages. It verifies side-effect-free imports, separate physical copies, both registration orders, and missing/incompatible/duplicate diagnostics.
+The repository's `tests/foundation-packed-harness.test.mjs` builds and packs Capability Registry, Package References, and Project Artifacts from sibling repository checkouts. It verifies ten public imports with only the expected Package References rendezvous initialization, separate physical copies, both registration orders, and missing/incompatible/duplicate diagnostics. It does not exercise a real Pi host or invoke provider callbacks.
+
+This cross-package harness requires all three repository checkouts and their development dependencies. Run it serially after their source changes are complete; it builds each sibling package. It is repository-only validation, not a command supported by an installed npm artifact.
 
 Run package validation from this package's manifest root:
 

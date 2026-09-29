@@ -1,6 +1,6 @@
 {
   "name": "@aefree/pi-capability-registry",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Runtime-scoped, version-aware registry mechanics for interoperable Pi capability contracts.",
   "type": "module",
   "sideEffects": false,

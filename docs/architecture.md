@@ -26,7 +26,7 @@ globalThis[Symbol.for(registryKey)]
 
 The root is protocol-versioned and contains independent state for each contract version. This lets separately installed providers and consumers find the same capability records without requiring them to share one JavaScript module instance.
 
-The key must identify the capability, not this generic package. For example:
+The key must identify the capability, not this generic package. For example, a hypothetical search capability (not an installable package):
 
 ```ts
 registryKey: "@aefree/pi-repo-search/providers"
