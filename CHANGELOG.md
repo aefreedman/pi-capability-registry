@@ -8,6 +8,7 @@ All notable changes to this package will be documented in this file.
 - Validate the current Capability Registry, Package References, and Project Artifacts contracts in the neutral packed-consumer harness.
 - Correct public installation guidance and identify hypothetical search examples explicitly.
 - Document the shipped TypeScript/source-map debugging contract and repository-only validation commands.
+- Publish GitHub releases to npm through token-free trusted publishing, with exact release identity checks and isolated package validation.
 
 ## 0.1.0 - 2026-07-28
 
